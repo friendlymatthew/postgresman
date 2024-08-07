@@ -1,9 +1,8 @@
 # workflow
 
-So far, I haven't figured out how to use the debugger. 
 
-Instead, you can print variables to the `psql` shell using `elog()`. Simply grep for `elog` and refer to an example. A note, the log level needs to be `NOTICE`!
-
+## Printing variables to psql
+You can print variables to the `psql` shell using `elog()`. Simply grep for `elog` and refer to an example. A note, the log level needs to be `NOTICE`!
 
 
 ## Cold start
@@ -70,12 +69,9 @@ Start your process!
 /usr/local/pgsql/bin/pg_ctl -D data -l logfile start
 ```
 
-
 Access the shell
 ```shell
 /usr/local/pgsql/bin/psql test
 ```
-
-
 
 
