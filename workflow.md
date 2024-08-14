@@ -1,9 +1,13 @@
-# workflow
+# Workflow 
 
 
 ## Printing variables to psql
 You can print variables to the `psql` shell using `elog()`. Simply grep for `elog` and refer to an example. A note, the log level needs to be `NOTICE`!
 
+```c++
+// example
+elog(NOTICE, "howdy %d", 3);
+```
 
 ## Cold start
 This is when you freshly fork the codebase and want to start hacking.
@@ -12,30 +16,29 @@ This is when you freshly fork the codebase and want to start hacking.
 ./configure
 
 # with enabled debug flags
-./configure --enable-depend --enable-debug --enable-cassert
+./configure --enable-depend --enable-debug --enable-cassert --without-icu
 ```
 
 ```shell
+# try to run this commands without sudo first.
 sudo make 
 ```
 
 ```shell
+# try to run this commands without sudo first.
 sudo make install
 ```
 
-Within my codebase repository, I create a `/data` folder.
+Within my codebase repository, I create a `/data` folder. We'll be slightly different from [`the postgres short installation guide`](https://www.postgresql.org/docs/15/install-short.html)
 ```shell
 mkdir data
 ```
-
-We'll be slightly different from [`the postgres short installation guide`](https://www.postgresql.org/docs/15/install-short.html)
-
 
 ```shell
 /usr/local/pgsql/bin/initdb -D data
 ```
 
-If everything goes well, the terminal should respond with a cli command to start the logfile:
+If everything goes well, the terminal should respond with a command to start the logfile:
 ```shell
 /usr/local/pgsql/bin/pg_ctl -D data -l logfile start
 ```
@@ -51,25 +54,24 @@ To access the shell, we'll need to create a database. Call it `test`.
 
 
 ## Hot refresh
-You made some changes, added some logs, now you want to rerun a SQL statement in the shell.
+You edited some files, added some logs, and want to test your changes in the shell. 
 
 Make sure to stop any background processes. 
 ```shell
 /usr/local/pgsql/bin/pg_ctl -D data -l logfile stop 
 ```
 
-Rerun `make install`
+Rerun `make install` and restart your logfile.
 
 ```shell
+# try to run this without sudo first.
 sudo make install
 ```
-
-Start your process!
 ```shell
 /usr/local/pgsql/bin/pg_ctl -D data -l logfile start
 ```
 
-Access the shell
+Access the shell!
 ```shell
 /usr/local/pgsql/bin/psql test
 ```

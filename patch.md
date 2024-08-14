@@ -1,7 +1,9 @@
-## Applying patches:
+# Patches
 
-Example
+## Apply Patches
+
 ```bash
+# example
 git am ~/Desktop/v13-0003-Remove-dependence-on-integer-wrapping-for-jsonb.patch
 ```
 

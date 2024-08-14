@@ -1,4 +1,4 @@
-## formatting
+# Formatting 
 
 To format your work, first install `pg_bsd_indent`. 
 
