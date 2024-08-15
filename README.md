@@ -1,6 +1,6 @@
 # postgresman 
 
-An informal manual I refer to when hacking on the Postgres codebase.
+An informal manual I refer to when hacking on the Postgres codebase. I learned all of this from Joe Koshakow. So all credits to him. 🙇
 
 ## Table of Contents
 ### [`workflow.md`](https://github.com/friendlymatthew/postgresman/blob/main/workflow.md)
@@ -18,6 +18,3 @@ Some `zsh` scripts I use. Use at your own risk.
 ## Machines Tested
 - Macos M1
 - Ubuntu Linux
-
-## Credit
-I learned all of this from Joe Koshakow. So all credits to him. 🙇
